@@ -27,7 +27,8 @@
         "znck.vue",
         "bradlc.vscode-tailwindcss",
         "Vue.volar",
-        "ms-vscode.vscode-typescript-next"
+        "ms-vscode.vscode-typescript-next",
+        "xdebug.php-debug"
       ]
     }
   },
