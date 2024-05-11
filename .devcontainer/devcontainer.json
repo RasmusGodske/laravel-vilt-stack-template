@@ -1,0 +1,45 @@
+{
+  "name": "Debian",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "INSTALL_ZSH": "true",
+      "USER_UID": "1000",
+      "USER_GID": "1000"
+    }
+  },
+  "workspaceFolder": "/home/vscode/project",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/project,type=bind,consistency=delegated",
+  "runArgs": [
+    "--init",
+    "--privileged"
+  ],
+  "forwardPorts": [
+    8080,
+
+  ],
+  "customizations": {
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "zsh",
+    },
+    "vscode": {
+      "extensions": [
+        "znck.vue",
+        "bradlc.vscode-tailwindcss",
+        "Vue.volar",
+        "ms-vscode.vscode-typescript-next"
+      ]
+    }
+  },
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/php:1": {
+      "installComposer": true
+    },
+    "ghcr.io/devcontainers/features/node:1": {},
+    },
+  "containerEnv": {
+    "APP_PORT": "8080"
+  }
+}
