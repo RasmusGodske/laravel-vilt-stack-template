@@ -21,7 +21,7 @@ pushd ../ >/dev/null
 
 # Install sail
 if [ ! -f $sail ]; then
-    docker run --rm -u 1000:1000 -v ${PWD}:/app -w /app laravelsail/php81-composer composer install && npm install
+    docker run --rm -u 1000:1000 -v ${PWD}:/app -w /app laravelsail/php83-composer composer install && npm install
 fi
 
 # Stop any running sail instances and remove volumes
